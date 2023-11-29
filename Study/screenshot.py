@@ -13,7 +13,7 @@ while True:
     frame = pyautogui.screenshot()
     frame = np.array(frame)
 
-    frame = cv2.cvtColor(frame, cv2.RGB)
+    frame = cv2.cvtColor(frame, cv2.RGB2BGR)
 
     video.write(frame)
 
