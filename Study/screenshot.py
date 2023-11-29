@@ -5,7 +5,18 @@ import numpy as np
 
 fps = 30
 tamanho_tela = tuple(pyautogui.size())
-print(tamanho_tela)
 
 codec = cv2.VideoWriter_fourcc(*"mp4h")
 video = cv2.VideoWriter("video", codec, fps, tamanho_tela)
+
+while True:
+    frame = pyautogui.screenshot()
+    frame = np.array(frame)
+
+    video.write(frame)
+
+    if keyboard.is_pressed("esc"):
+        break
+
+video.release()
+cv2.destroyALllWindows()
