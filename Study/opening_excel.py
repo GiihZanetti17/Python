@@ -25,11 +25,11 @@ for mes in lista_meses:
 
 #Your Account SID from twilio.com/console
 
-account_sid = "ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+account_sid = "ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX" #necessário criar conta no twilio.
 
 # Your Auth Token from twilio.com/console
 
-auth_token = "your_auth_token"
+auth_token = "your_auth_token" #necessário criar conta no twilio para gerar o token
 
 client = Client(account_sid, auth_token)
 
@@ -38,3 +38,5 @@ message = client.messages.create (
     from_ = "+19xxxxxxx"
     body = "Hello from Python!"
 )
+
+print(message.sid)
