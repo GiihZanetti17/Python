@@ -13,6 +13,8 @@ while True:
     frame = pyautogui.screenshot()
     frame = np.array(frame)
 
+    frame = cv2.cvtColor(frame, cv2.RGB)
+
     video.write(frame)
 
     if keyboard.is_pressed("esc"):
