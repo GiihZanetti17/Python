@@ -1,5 +1,6 @@
 import pandas as pd #as pd vc esta abreviando pandas para pd
 
+from twilio.rest import Client
 
 # Passo a passso da solucao:
 
@@ -16,14 +17,24 @@ for mes in lista_meses:
         print(f'no mês {mes} alguem bateu a meta. Vendedor: {vendedor}, Vendas: {vendas}')
 
 
-
 # Para cada arquivo:?
-
-
 # Verificar se algum valor na coluna Vendas daquele arquivo e maior que 55.00
-
-
 # Se for maior que 55.000 -> Envia um SMS com o Nome, mes e as vendas do vendedor
-
-
 # Caso nao seja maior do que 55.000 nao quero fazer nada
+
+
+#Your Account SID from twilio.com/console
+
+account_sid = "ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+
+# Your Auth Token from twilio.com/console
+
+auth_token = "your_auth_token"
+
+client = Client(account_sid, auth_token)
+
+message = client.messages.create (
+    to = "+199xxxxx"
+    from_ = "+19xxxxxxx"
+    body = "Hello from Python!"
+)
