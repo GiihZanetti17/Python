@@ -25,11 +25,11 @@ for mes in lista_meses:
 
 #Your Account SID from twilio.com/console
 
-account_sid = "ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX" #necessário criar conta no twilio.
+account_sid = "ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
 
 # Your Auth Token from twilio.com/console
 
-auth_token = "your_auth_token" #necessário criar conta no twilio para gerar o token
+auth_token = "your_auth_token"
 
 client = Client(account_sid, auth_token)
 
