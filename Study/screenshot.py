@@ -6,14 +6,14 @@ import numpy as np
 fps = 30
 tamanho_tela = tuple(pyautogui.size())
 
-codec = cv2.VideoWriter_fourcc(*"mp4h")
-video = cv2.VideoWriter("video", codec, fps, tamanho_tela)
+codec = cv2.VideoWriter_fourcc(*"mp4v")
+video = cv2.VideoWriter("video.mp4", codec, fps, tamanho_tela)
 
 while True:
     frame = pyautogui.screenshot()
     frame = np.array(frame)
 
-    frame = cv2.cvtColor(frame, cv2.RGB2BGR)
+    frame = cv2.cvtColor(frame, cv2.COLOR_RGB2BGR)
 
     video.write(frame)
 
@@ -21,4 +21,4 @@ while True:
         break
 
 video.release()
-cv2.destroyALllWindows()
+cv2.destroyAllWindows()
